@@ -69,4 +69,10 @@ class CustomerController {
 
 		return "customers";
 	}
+
+	@GetMapping("/management")
+	@PreAuthorize("hasRole('MANAGEMENT')")
+	String management(Model model) {
+		return "management";
+	}
 }
